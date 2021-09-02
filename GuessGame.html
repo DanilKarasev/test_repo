@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var answer = parseInt(Math.random() * 100);
+    var userAnswer = +prompt("Угадайте число от 0 до 100");
+    var maxTryCount = 5;
+
+    for (var tryCount = 1; tryCount < maxTryCount; tryCount++) {
+        if (userAnswer == answer) {
+            alert("Поздравляю, вы угадали!");
+            break;
+        } else if (userAnswer > answer) {
+            alert("Вы ввели слишком большое число");
+        } else if (userAnswer < answer) {
+            alert("Вы ввели слишком малое число");
+        }
+
+        userAnswer = +prompt("Попробуйте еще раз. Введите число от 1 до 100\n У вас осталось " + (maxTryCount - tryCount) + " попыток");
+    }
+
+    if (tryCount == maxTryCount)
+        alert("Вы проиграли!");
+
+    alert("Правильный ответ: " + answer);
+
+</script>
+</body>
+</html>
+
+
+
